@@ -1,0 +1,393 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+html {
+  font-size: 8px;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --light-gray: #f2f2f2;
+  --gray: #828282;
+  --darker-gray: #333333;
+  --dark-gray: #4e5150;
+  --main-radius: 1.5rem;
+}
+
+body {
+  color: var(--dark-gray);
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 4rem 0 2.5rem 0;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+a,
+p {
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+label {
+  margin-bottom: 0.65rem;
+  font-size: 1.25rem;
+}
+
+input[type='checkbox'] {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+}
+
+button[type='submit'] {
+  border: none;
+  padding: 2.125rem 5.625rem;
+  font-size: 2rem;
+  background: #f2994a;
+  color: #fff;
+  border-radius: var(--main-radius);
+  grid-area: submit;
+}
+
+button[type='submit']:hover {
+  background: rgba(242, 153, 74, 0.8);
+}
+
+button {
+  cursor: pointer;
+}
+
+section {
+  margin-bottom: 11.875rem;
+}
+
+select {
+  height: 5.07rem;
+}
+
+.container {
+  width: clamp(16rem, 93vw, 100rem);
+  margin: 0 auto;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.products {
+  background: var(--light-gray);
+  border-radius: var(--main-radius);
+  padding: 3.75em 3em 2em 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+  width: 100%;
+}
+
+.single-product {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 3.625rem;
+}
+
+.single-product img {
+  width: auto;
+  height: 15.5rem;
+  border-radius: var(--main-radius);
+}
+
+.product-info {
+  margin-left: 3rem;
+  width: auto;
+  height: 100%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.current-price {
+  font-size: 1.75rem;
+  color: #f2994a;
+  margin-right: 2rem;
+}
+
+.old-price {
+  font-size: 1.25rem;
+  text-decoration: line-through;
+}
+
+.quantity {
+  margin-top: 3.5rem;
+  padding: 1.75em 1.25em;
+  border: 1px solid var(--gray);
+  border-radius: var(--main-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--darker-gray);
+}
+
+.quantity button {
+  width: 2.375rem;
+  height: 2.375rem;
+  font-size: 1.25rem;
+  border: none;
+  background: #e0e0e0;
+  color: #828282;
+  border-radius: 0.5rem;
+}
+
+.quantity span {
+  font-size: 2rem;
+}
+
+.shipping-price,
+.total {
+  font-size: 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border-top: 1px solid #bdbdbd;
+  padding-top: 1.25em;
+  padding-bottom: 1em;
+}
+
+.shipping-price p,
+.total p {
+  font-size: 1.75rem;
+}
+
+/* Forms */
+
+.forms {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+}
+
+.forms label {
+  font-size: 1.25rem;
+}
+
+.contact {
+  margin-bottom: 5.625rem;
+}
+
+.single-form {
+  /* display: flex;
+  flex-direction: column; */
+  position: relative;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.input-icons svg {
+  position: absolute;
+  color: var(--gray);
+  fill: var(--gray);
+  top: 52%;
+  left: 3%;
+  width: 2rem;
+  height: 2rem;
+}
+
+.input-field,
+select {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 1.25rem 2rem 1.25rem 4rem;
+  border-radius: var(--main-radius);
+  border: 1px solid var(--gray);
+}
+
+.shipping,
+.contact {
+  width: 100%;
+}
+
+.confirm {
+  margin-bottom: 2.5rem;
+  grid-area: confirm;
+}
+
+.name {
+  grid-area: name;
+}
+
+.address {
+  grid-area: address;
+}
+
+.city {
+  grid-area: city;
+}
+
+.country {
+  grid-area: country;
+}
+
+.country select {
+  padding-left: 3rem;
+}
+
+.country svg,
+.postal svg {
+  left: 5%;
+}
+
+.postal {
+  grid-area: postal;
+}
+
+.confirm {
+  grid-area: confirm;
+}
+
+.shipping-forms {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'name name'
+    'address address'
+    'city city'
+    'country postal'
+    'confirm confirm'
+    '. submit';
+  column-gap: 2rem;
+}
+
+/* Footer */
+
+footer p {
+  text-align: center;
+  color: #bdbdbd;
+}
+
+footer a:first-child {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 739px) {
+  .input-field {
+    padding: 1.25rem 2rem 1.25rem 4rem;
+  }
+
+  .country svg,
+  .postal svg {
+    left: 6%;
+  }
+
+  .postal .input-field {
+    padding-left: 4rem;
+  }
+
+  .checkout {
+    width: 100%;
+    flex-direction: row;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  /* .single-product {
+    justify-content: space-between;
+  } */
+
+  .single-product img {
+    width: auto;
+  }
+}
